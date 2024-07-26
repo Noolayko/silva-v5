@@ -7,7 +7,7 @@ import path from 'path'
 import { fileURLToPath } from 'url';
 
 figlet(
-  'silva-v5',
+  'Lazack-md-2',
   {
     font: 'Ghost',
     horizontalLayout: 'default',
@@ -23,7 +23,7 @@ figlet(
 )
 
 figlet(
-  'kenyan silva Whatsapp Bot',
+  'Biscuit Whatsapp Bot',
   {
     horizontalLayout: 'default',
     verticalLayout: 'default',
@@ -46,7 +46,7 @@ const __dirname = path.dirname(__filename);
 app.use(express.static(path.join(__dirname, 'media')));
 
 app.get('/', (req, res) => {
-  res.redirect('/silva.html');
+  res.redirect('/lazack.html');
 });
 
 app.listen(port, () => {
@@ -87,7 +87,7 @@ async function start(file) {
 
     fs.watchFile(args[0], () => {
       fs.unwatchFile(args[0])
-      start('silva.js')
+      start('lazack.js')
     })
   })
 
@@ -95,7 +95,7 @@ async function start(file) {
     console.error(chalk.red(`Error: ${err}`))
     p.kill()
     isRunning = false
-    start('silva.js')
+    start('lazack.js')
   })
 
   const pluginsFolder = path.join(path.dirname(currentFilePath), 'plugins')
@@ -117,15 +117,15 @@ async function start(file) {
   })
 }
 
-start('silva.js')
+start('lazack.js')
 
 process.on('unhandledRejection', () => {
   console.error(chalk.red(`Unhandled promise rejection. Bot will restart...`))
-  start('silva.js')
+  start('lazack.js')
 })
 
 process.on('exit', code => {
   console.error(chalk.red(`Exited with code: ${code}`))
   console.error(chalk.red(`Bot will restart...`))
-  start('silva.js')
+  start('lazack.js')
 })
